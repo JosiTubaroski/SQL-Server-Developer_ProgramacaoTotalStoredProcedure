@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="01 - Conceitos">
+  <Items>
+    <LogicalFolder Name="Conexões" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="LAPTOP-74VND56R\JOSISQLSERVER:LAPTOP-74VND56R\Josi">
+          <Created>2020-09-17T22:03:35.106663-03:00</Created>
+          <Type>SQL</Type>
+          <Server>LAPTOP-74VND56R\JOSISQLSERVER</Server>
+          <UserName />
+          <Authentication>Autenticação do Windows</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Consulta</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Consultas" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01 - Montagem de scripts.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-74VND56R\JOSISQLSERVER:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-74VND56R\JOSISQLSERVER</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01 - Montagem de scripts.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 - Comentários.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-74VND56R\JOSISQLSERVER:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-74VND56R\JOSISQLSERVER</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02 - Comentários.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 - USE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-74VND56R\JOSISQLSERVER:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-74VND56R\JOSISQLSERVER</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03 - USE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 - Barra invertida.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>04 - Barra invertida.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - GO.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-74VND56R\JOSISQLSERVER:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-74VND56R\JOSISQLSERVER</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05 - GO.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06 - EXECUTE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-74VND56R\JOSISQLSERVER:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-74VND56R\JOSISQLSERVER</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>06 - EXECUTE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07 - PRINT e RAISERROR.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-74VND56R\JOSISQLSERVER:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-74VND56R\JOSISQLSERVER</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>07 - PRINT e RAISERROR.sql</FullPath>
+        </FileNode>
+        <FileNode Name="08 - @@ROWCOUNT e ROWCOUNT_BIG().sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>08 - @@ROWCOUNT e ROWCOUNT_BIG().sql</FullPath>
+        </FileNode>
+        <FileNode Name="09 - SEQUENCE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>09 - SEQUENCE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="10 - @@ERROR.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>10 - @@ERROR.sql</FullPath>
+        </FileNode>
+        <FileNode Name="11 - SET NOCONT ON.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>11 - SET NOCONT ON.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Diversos" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
