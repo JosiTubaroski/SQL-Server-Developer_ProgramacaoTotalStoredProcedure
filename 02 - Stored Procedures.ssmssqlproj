@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="02 - Stored Procedures">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01 - Motivos para usar Stored Procedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>01 - Motivos para usar Stored Procedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 - Design de Store Procedure .sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>02 - Design de Store Procedure .sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 - Operação com Stored Procedure.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>03 - Operação com Stored Procedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 - Retornando um Dataset.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>04 - Retornando um Dataset.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - Utilizando Parâmetros.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>05 - Utilizando Parâmetros.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06 - Valor padrão de parâmetros.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>06 - Valor padrão de parâmetros.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07 - Direção dos  Parâmetros.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>07 - Direção dos  Parâmetros.sql</FullPath>
+        </FileNode>
+        <FileNode Name="08 - Retornando um status.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>08 - Retornando um status.sql</FullPath>
+        </FileNode>
+        <FileNode Name="09 - Procedure para tratamento de erro.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>09 - Procedure para tratamento de erro.sql</FullPath>
+        </FileNode>
+        <FileNode Name="10 - Segurança dos dados.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>10 - Segurança dos dados.sql</FullPath>
+        </FileNode>
+        <FileNode Name="11 - Procedures Aninhadas.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>11 - Procedures Aninhadas.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12 - Query dinâmica e SQL Injection.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>12 - Query dinâmica e SQL Injection.sql</FullPath>
+        </FileNode>
+        <FileNode Name="13 - Criptografia  vale a pena.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>13 - Criptografia  vale a pena.sql</FullPath>
+        </FileNode>
+        <FileNode Name="14 - Passando vários dados por um parâmetro.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>14 - Passando vários dados por um parâmetro.sql</FullPath>
+        </FileNode>
+        <FileNode Name="15 - Passando tabela como parâmetro.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>15 - Passando tabela como parâmetro.sql</FullPath>
+        </FileNode>
+        <FileNode Name="16 - Como retornar vários DataSet.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>16 - Como retornar vários DataSet.sql</FullPath>
+        </FileNode>
+        <FileNode Name="17 - Utilizando tabela temporias com procedures.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>17 - Utilizando tabela temporias com procedures.sql</FullPath>
+        </FileNode>
+        <FileNode Name="18 - Criando procedure de sistemas.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>18 - Criando procedure de sistemas.sql</FullPath>
+        </FileNode>
+        <FileNode Name="19 - Procedure na inicialização do SQL Server.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>19 - Procedure na inicialização do SQL Server.sql</FullPath>
+        </FileNode>
+        <FileNode Name="20 - Compilação.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>20 - Compilação.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="03 - Functions">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01 - Design de User Defined Functions.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>01 - Design de User Defined Functions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 - Scalar Functions.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>02 - Scalar Functions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 - Inline Table Valued Function.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>03 - Inline Table Valued Function.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 - Multistatement Table Valued Function.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>04 - Multistatement Table Valued Function.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - Quando utilizar as UDF.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>05 - Quando utilizar as UDF.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06 - (Preview) Utilizando SEQUENCE.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>06 - (Preview) Utilizando SEQUENCE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07 - Topicos de Desempenho.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>07 - Topicos de Desempenho.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

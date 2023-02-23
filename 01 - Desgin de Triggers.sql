@@ -1,0 +1,1 @@
+https://docs.microsoft.com/pt-br/sql/relational-databases/triggers/dml-triggers?view=sql-server-2017

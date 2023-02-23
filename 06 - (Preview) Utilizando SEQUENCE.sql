@@ -1,0 +1,1 @@
+https://www.dirceuresende.com/blog/utilizando-sequences-em-user-defined-functions-no-sql-server/

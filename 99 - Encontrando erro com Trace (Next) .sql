@@ -1,0 +1,1 @@
+https://www.mssqltips.com/sqlservertip/5940/use-sql-server-default-trace-to-find-errors/?utm_source=dailynewsletter&utm_medium=email&utm_content=headline&utm_campaign=20190218

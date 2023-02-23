@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="01- Views">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01 - Motivos para usar Views.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>01 - Motivos para usar Views.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 - Design de Views.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>02 - Design de Views.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 - SCHEMABINDING.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>03 - SCHEMABINDING.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 - Views Atualizáveis.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>04 - Views Atualizáveis.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - CHECK OPTION.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>05 - CHECK OPTION.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06 - Erros comuns em Views (Out).sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>06 - Erros comuns em Views (Out).sql</FullPath>
+        </FileNode>
+        <FileNode Name="07 - Views Indexáveis (Next).sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>07 - Views Indexáveis (Next).sql</FullPath>
+        </FileNode>
+        <FileNode Name="08- Restrições na instução SELECT (Out).sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>08- Restrições na instução SELECT (Out).sql</FullPath>
+        </FileNode>
+        <FileNode Name="09 - Views Particionadas (Next).sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>09 - Views Particionadas (Next).sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

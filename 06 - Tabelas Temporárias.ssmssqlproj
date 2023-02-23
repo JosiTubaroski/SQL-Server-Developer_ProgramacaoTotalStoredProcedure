@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="06 - Tabelas Temporárias">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01- Tabela Temporária Local.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>01- Tabela Temporária Local.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 -Tabela Temporária Global.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>02 -Tabela Temporária Global.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 - Variável tipo Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>03 - Variável tipo Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 - Criando um tipo de dado tabela.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>04 - Criando um tipo de dado tabela.sql</FullPath>
+        </FileNode>
+        <FileNode Name="98 - Evite o uso de SELECT INTO (Next) .sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>98 - Evite o uso de SELECT INTO (Next) .sql</FullPath>
+        </FileNode>
+        <FileNode Name="99 - Utilizando em transações (Next).sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>99 - Utilizando em transações (Next).sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

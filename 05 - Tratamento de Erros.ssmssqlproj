@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="05 - Tratamento de Erros">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="01 - Entendendo os erros.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>01 - Entendendo os erros.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 - Severidade dos errros.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>02 - Severidade dos errros.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 - Encontrando soluções.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>03 - Encontrando soluções.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 - RAISERROR com TRY CATCH.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>04 - RAISERROR com TRY CATCH.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 - Informações sobre o erro.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>05 - Informações sobre o erro.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06 - Armazenando as mensagens de erro.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>06 - Armazenando as mensagens de erro.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07 - Tratamento de erros de transação.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>07 - Tratamento de erros de transação.sql</FullPath>
+        </FileNode>
+        <FileNode Name="97 - THROW (Next).sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>97 - THROW (Next).sql</FullPath>
+        </FileNode>
+        <FileNode Name="98 - SET XACT_ABORT (Next).sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>98 - SET XACT_ABORT (Next).sql</FullPath>
+        </FileNode>
+        <FileNode Name="99 - Encontrando erro com Trace (Next) .sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>99 - Encontrando erro com Trace (Next) .sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
