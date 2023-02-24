@@ -1,7 +1,7 @@
 /*
 Desativar o SET NOCOUNT ON 
 
-- Quando executamos uma instrução INSERT, UPDATE, DELETE, MERGE ou um procedimento 
+- Quando executamos uma instruÃ§Ã£o INSERT, UPDATE, DELETE, MERGE ou um procedimento 
   armazenado, as vezes recebemos a mensagem:
 
   (XX rows affected)
@@ -15,27 +15,27 @@ select * from tCADCliente where dAniversario <= '1940-01-01'
 
 
 /*
-- Toda a execução de comandos que afetam um determinado número de linhas de uma tabela,
-  sempre retornam para a sessão ativa ( ou para a conexão da aplicação) o total dessas linhas.
+- Toda a execuÃ§Ã£o de comandos que afetam um determinado nÃºmero de linhas de uma tabela,
+  sempre retornam para a sessÃ£o ativa ( ou para a conexÃ£o da aplicaÃ§Ã£o) o total dessas linhas.
 
-- Voce deve utilizar o SET NOCOUNT ON na fase de programação para evitar esse trânsito de dados
-  na rede e, de alguma forma, reduzir o tempo de processamento das instruções. 
+- Voce deve utilizar o SET NOCOUNT ON na fase de programaÃ§Ã£o para evitar esse trÃ¢nsito de dados
+  na rede e, de alguma forma, reduzir o tempo de processamento das instruÃ§Ãµes. 
 
 - De acordo com site da Microsoft. 
   Ref.: https://docs.microsoft.com/pt-br/sql/t-sql/statements/set-nocount-transact-sql?view=sql-server-2017
 
-  "SET NOCOUNT ON evita o envio de mensagens DONE_IN_PROC ao cliente para cada instrução em 
-   um procedimento armazenado. Para procedimentos armazenados que contêm várias instruções 
-   que não retornam muitos dados reais, ou para procedimentos que contêm loops Transact-SQL, 
+  "SET NOCOUNT ON evita o envio de mensagens DONE_IN_PROC ao cliente para cada instruÃ§Ã£o em 
+   um procedimento armazenado. Para procedimentos armazenados que contÃªm vÃ¡rias instruÃ§Ãµes 
+   que nÃ£o retornam muitos dados reais, ou para procedimentos que contÃªm loops Transact-SQL, 
    configurar SET NOCOUNT como ON pode fornecer um aumento significativo no desempenho, 
-   porque o tráfego de rede é reduzido consideravelmente."
+   porque o trÃ¡fego de rede Ã© reduzido consideravelmente."
 
 */
 
 
 /*
-Configurando o SET NOCOUNT ON na conexão atual, essa configuração somente tera efeito somente 
-nos comandos dessa conexão. 
+Configurando o SET NOCOUNT ON na conexÃ£o atual, essa configuraÃ§Ã£o somente tera efeito somente 
+nos comandos dessa conexÃ£o. 
 
 */
 use eBook
@@ -61,5 +61,5 @@ go 100
 
 /*
 Dicas: 
-Utilizar SET NOCOUNT ON nos objetos de programação.
+Utilizar SET NOCOUNT ON nos objetos de programaÃ§Ã£o.
 */
