@@ -1,13 +1,13 @@
 /*
-Separação de execução em blocos ou lote 
+SeparaÃ§Ã£o de execuÃ§Ã£o em blocos ou lote 
 
 GO 
 
-Não é uma instrução SQL Server. 
-É um comando da SQL Server Management Studio.
-Torna o script legíveis e facilita execuções em lote.
+NÃ£o Ã© uma instruÃ§Ã£o SQL Server. 
+Ã‰ um comando da SQL Server Management Studio.
+Torna o script legÃ­veis e facilita execuÃ§Ãµes em lote.
 
-GO indica o fim de execução de um bloco de comandos.
+GO indica o fim de execuÃ§Ã£o de um bloco de comandos.
 
 -- Exemplos 
 */
@@ -24,7 +24,7 @@ Select top 1 * from tCADLivro
 go
 
 /*
-Separar execuções de objetos de programação 
+Separar execuÃ§Ãµes de objetos de programaÃ§Ã£o 
 */
 
 Create Or Alter Procedure stp_UltimoPedido
@@ -67,7 +67,7 @@ Alter Table tCADRevista add nEdicao int  not null default 0
 Msg 111, Level 15, State 1, Line 34
 'CREATE VIEW' must be the first statement in a query batch.
 
-A view deve ser a primeira instrução em um lote 
+A view deve ser a primeira instruÃ§Ã£o em um lote 
 Mas como colocar a view antes de criar a tabela???
 
 */
@@ -120,7 +120,7 @@ Alter Table tCADRevista add nEdicao int  not null default 0
 
 
 /*
-Utilizando GO com o parâmetro de quantidade de execuções 
+Utilizando GO com o parÃ¢metro de quantidade de execuÃ§Ãµes 
 */
 
 Select getdate()
@@ -134,7 +134,7 @@ go 2
 
 
 /*
-Exemplo Prático 
+Exemplo PrÃ¡tico 
 */
 
 Drop table if exists tCADRevista
@@ -148,7 +148,7 @@ select * from tCADRevista
 
 
 /*
-Script para monitorar o uso da memória 
+Script para monitorar o uso da memÃ³ria 
 */
 
 Drop table if exists tTMPMonitorMemoria
