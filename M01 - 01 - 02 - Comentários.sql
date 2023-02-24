@@ -4,7 +4,7 @@ go
 /*
 
 
-Isto È um coment·rio !!!
+Isto √© um coment√°rio !!!
 Quando vc quer usar duas ou mais linhas 
 
 
@@ -15,15 +15,15 @@ select * from sys.objects
 
 
 -- Montar cabecalhos.
--- Explicar uma instruÁıes complexa
--- Marcar onde realizamos uma alteraÁıes.
--- Marcar inicio e final de execuÁ„o de uma regra de negÛcio.
+-- Explicar uma instru√ß√µes complexa
+-- Marcar onde realizamos uma altera√ß√µes.
+-- Marcar inicio e final de execu√ß√£o de uma regra de neg√≥cio.
 
 
 Select * -- * significa todas as colunas 
 from sys.objects 
 
-sp_helptext sp_helpindex2 -- ExecuÁ„o da Procedure 
+sp_helptext sp_helpindex2 -- Execu√ß√£o da Procedure 
 go
 
 use master
@@ -33,46 +33,46 @@ go
 Tipo Objeto				: Stored Procedure        
 Objeto					: sp_HelpIndex2 
 Objetivo				: 
-Projeto					: AdministraÁ„o de banco de Dados         
-Empresa Respons·vel		: ForceDB Treinamentos
+Projeto					: Administra√ß√£o de banco de Dados         
+Empresa Respons√°vel		: ForceDB Treinamentos
 Criado em				: 27/11/2014
-ExecuÁ„o				: SSMS        
-Palavras-chave			: Indices, Tabelas, Tamanho, UtilizaÁ„o  
+Execu√ß√£o				: SSMS        
+Palavras-chave			: Indices, Tabelas, Tamanho, Utiliza√ß√£o  
 ----------------------------------------------------------------------------------------------        
-Dicion·rio:        
+Dicion√°rio:        
 
 - Criar a procedure no banco de dados Master. 
-- Executar a instruÁ„o abaixo no banco de dados MASTER
+- Executar a instru√ß√£o abaixo no banco de dados MASTER
 
   Execute sp_ms_marksystemobject 'sp_HelpIndex2'
 
 -- IDBUG [00000]
 ----------------------------------------------------------------------------------------------        
-HistÛrico:        
-Autor                  IDBug Data       DescriÁ„o        
+Hist√≥rico:        
+Autor                  IDBug Data       Descri√ß√£o        
 ---------------------- ----- ---------- ------------------------------------------------------------        
-Wolney M. Maia               27/11/2014 CriaÁ„o da Procedure 
-Wolney M. Maia               19/02/2015 Quando informado o parametro @nOptions = 2, separar a apresentaÁ„o dos user_seeks ,user_scans , user_lookups
+Wolney M. Maia               27/11/2014 Cria√ß√£o da Procedure 
+Wolney M. Maia               19/02/2015 Quando informado o parametro @nOptions = 2, separar a apresenta√ß√£o dos user_seeks ,user_scans , user_lookups
 Wolney M. Maia               19/02/2015 Informar o tamanho da tabela em MBytes, junto com o tamanho em Paginas de Dados
-Wolney M. Maia               05/03/2015 Inclus„o da coluna cRecommendationIndex. Com base na fragmentaÁ„o, essa coluna tem os valores Reorganize ou Rebuild. 
-Wolney M. Maia               09/03/2015 No cabeÁalho da procedure, foi incluido a coluna IDbug no Historico, para referencia dentro do codigo, para identificar a correÁ„o.
-Wolney M. Maia         00001 09/03/2015 Inclus„o da instruÁ„o "collate SQL_Latin1_General_CP1_CI_AI"
-Wolney M. Maia         00002 12/03/2015 Inclus„o da funÁ„o ISNULL para as coluna user_updates , user_seeks, user_scans, user_lookups, user_updates
+Wolney M. Maia               05/03/2015 Inclus√£o da coluna cRecommendationIndex. Com base na fragmenta√ß√£o, essa coluna tem os valores Reorganize ou Rebuild. 
+Wolney M. Maia               09/03/2015 No cabe√ßalho da procedure, foi incluido a coluna IDbug no Historico, para referencia dentro do codigo, para identificar a corre√ß√£o.
+Wolney M. Maia         00001 09/03/2015 Inclus√£o da instru√ß√£o "collate SQL_Latin1_General_CP1_CI_AI"
+Wolney M. Maia         00002 12/03/2015 Inclus√£o da fun√ß√£o ISNULL para as coluna user_updates , user_seeks, user_scans, user_lookups, user_updates
 Wolney M. Maia         00003 17/03/2015 Inclusao da coluna Fill Factor 
-Wolney M. Maia         00004 18/03/2015 Inclus„o do calculo da Ranking para as estatisticas das colunas user_updates , user_seeks, user_scans, user_lookups, user_updates
+Wolney M. Maia         00004 18/03/2015 Inclus√£o do calculo da Ranking para as estatisticas das colunas user_updates , user_seeks, user_scans, user_lookups, user_updates
 Wolney M. Maia         00005 18/03/2015 Inclusao da instrucao set transaction isolation level read uncommitted ;
-Wolney M. Maia         00006 18/03/2015 Filtrando objetos o.type not in ('S','IT','TF') para n„o serem processados 
-Wolney M. Maia         00007 31/03/2015 Inclus„o da coluna para mostrar a data em que a estatistica para o indice foi atualizada. 
-Wolney M. Maia         00008 04/08/2015 Quando uma tabela È Heap e tem um indices n„o cluster, somente era apresentado a linha com a Headp. 
-Wolney M. Maia         00009 12/09/2015 Inclusao da coluna DISABLE para indicar se um indice est· desativado ou n„p 
-Wolney M. Maia         00010 07/12/2015 Inclusao da coluna index_id na apresentaÁ„o. Inclus„o de Order By no select de apresentaÁ„o .
-                                        Coleta de dados de Pages, Size e rows da CTE de Indices ou da CTE de Indices AvanÁado.
-Wolney M. Maia         00011 09/06/2017 Inclus„o da instruÁ„o SET ANSI_WARNINGS OFF para n„o mostrar os avisos de descarte de dados null
-                                        durante a agregaÁ„o de dados. 
-Wolney M. Maia         00012 09/06/2017 Inclus„o da coluna nPartitionNumber. 
-Wolney M. Maia         00013 09/06/2017 Inclus„o do teste de perfil de sysadmin para permiti apresentado em detalhes do indices 
-Wolney M. Maia         00014 09/09/2017 Inclus„o do schema na composiÁ„o do nome da tabela 
-Wolney M. Maia         00015 12/06/2017 Inclus„o do parametro 2 do help para mostrar o n˙mero da vers„o da procedure.
+Wolney M. Maia         00006 18/03/2015 Filtrando objetos o.type not in ('S','IT','TF') para n√£o serem processados 
+Wolney M. Maia         00007 31/03/2015 Inclus√£o da coluna para mostrar a data em que a estatistica para o indice foi atualizada. 
+Wolney M. Maia         00008 04/08/2015 Quando uma tabela √© Heap e tem um indices n√£o cluster, somente era apresentado a linha com a Headp. 
+Wolney M. Maia         00009 12/09/2015 Inclusao da coluna DISABLE para indicar se um indice est√° desativado ou n√£p 
+Wolney M. Maia         00010 07/12/2015 Inclusao da coluna index_id na apresenta√ß√£o. Inclus√£o de Order By no select de apresenta√ß√£o .
+                                        Coleta de dados de Pages, Size e rows da CTE de Indices ou da CTE de Indices Avan√ßado.
+Wolney M. Maia         00011 09/06/2017 Inclus√£o da instru√ß√£o SET ANSI_WARNINGS OFF para n√£o mostrar os avisos de descarte de dados null
+                                        durante a agrega√ß√£o de dados. 
+Wolney M. Maia         00012 09/06/2017 Inclus√£o da coluna nPartitionNumber. 
+Wolney M. Maia         00013 09/06/2017 Inclus√£o do teste de perfil de sysadmin para permiti apresentado em detalhes do indices 
+Wolney M. Maia         00014 09/09/2017 Inclus√£o do schema na composi√ß√£o do nome da tabela 
+Wolney M. Maia         00015 12/06/2017 Inclus√£o do parametro 2 do help para mostrar o n√∫mero da vers√£o da procedure.
 */
 Create or Alter Procedure dbo.sp_HelpIndex2
 @cTableName sysname = null ,
@@ -82,15 +82,15 @@ Create or Alter Procedure dbo.sp_HelpIndex2
 					 -- 2 (8)  is Statistics Limited (Retorna os dados de Estatisticas do Indices)
 					 -- 3 (16) is Statistics Advanced (Retorna os dados de Estatisticas do Indices)
 					 
-@cResultTable sysname = null  ,    -- Nome da tabela que receber· os dados. Ela ser· criada no banco de dados do contexto da execuÁ„o 
+@cResultTable sysname = null  ,    -- Nome da tabela que receber√° os dados. Ela ser√° criada no banco de dados do contexto da execu√ß√£o 
 
 @nOptionsResultTable tinyint = 2 , -- 2 - Incluir Dados
                                    -- 4 - Apagar Dados 
                                    -- 8 - Apresentar Dados 
                                    -- 16 - Drop a tabela 
-@nHelp tinyint = 0   -- 0 N„o mostra nada
-                     -- 1 Mostra o Help da instruÁ„o sp_helpindex2 
-					 -- 2 Mostra o numero da vers„o da procedure.
+@nHelp tinyint = 0   -- 0 N√£o mostra nada
+                     -- 1 Mostra o Help da instru√ß√£o sp_helpindex2 
+					 -- 2 Mostra o numero da vers√£o da procedure.
 as
 begin 
 
@@ -110,7 +110,7 @@ begin
    end 
    */
    if @nHelp = 2 begin 
-       select 'Vers„o 1.14'
+       select 'Vers√£o 1.14'
 	   return 1.14
    end 
 
@@ -141,7 +141,7 @@ begin
    
    
    /*
-   Criar a tabela temporaria para receber o resultado da execuÁ„o
+   Criar a tabela temporaria para receber o resultado da execu√ß√£o
    */
     
    Create Table #tTMPFdBHelpIndex(
@@ -163,7 +163,7 @@ begin
 		        nDataPages bigint NULL,
 				nSizeInMB float NULL,
 		        nRows bigint NULL,
-			    nUserUsage bigint NULL, -- Ser· a soma de nUserSeeks + nUserScans + nUserLookups
+			    nUserUsage bigint NULL, -- Ser√° a soma de nUserSeeks + nUserScans + nUserLookups
 			    nRankUserUsage bigint NULL,
 				nUserSeeks bigint NULL,
 				nRankUserSeeks bigint NULL,
@@ -188,10 +188,10 @@ begin
    begin try
    
        if @nOptions = 3 and @cTableName is null and IS_SRVROLEMEMBER('sysadmin',SYSTEM_USER) <> 1  -- IDBUG [00013]
-          raiserror('OperaÁ„o de Detalhamento dos indices para todas as tabelas somente permitido para o perfil de sysadmin.',16,1)
+          raiserror('Opera√ß√£o de Detalhamento dos indices para todas as tabelas somente permitido para o perfil de sysadmin.',16,1)
    
        if @cTableName is not null and object_id(@cTableName) is null
-          raiserror('Nome da tabela %s n„o existe.',16,1,@cTableName)
+          raiserror('Nome da tabela %s n√£o existe.',16,1,@cTableName)
 	   
 	   set @nIndexID = indexproperty(OBJECT_ID(@cTableName),@cIndexName,'IndexID')
 	   
@@ -199,16 +199,16 @@ begin
 	   set @nIndexID = case when @nIndexID = 0 then null else @nIndexID  end 
 	   
 	   if @cIndexName is not null and @nIndexID is null 
-	      raiserror('Nome do indice %s n„o existe.',16,1,@cIndexName)
+	      raiserror('Nome do indice %s n√£o existe.',16,1,@cIndexName)
 	   
 	   /*
-	   Consiste a tabela Destino (@cResultTable) onde os dados ser„o gravados.
+	   Consiste a tabela Destino (@cResultTable) onde os dados ser√£o gravados.
 	   */
 	   
        if @cResultTable is not null begin 
            
           if db_name(db_id(parsename(@cResultTable,3))) is null 
-             raiserror('Nome do banco de dados da tabela de resultados È inv·lido.',18,1)	         
+             raiserror('Nome do banco de dados da tabela de resultados √© inv√°lido.',18,1)	         
           
           if @nOptionsResultTable & 16 = 16 begin
            
@@ -218,7 +218,7 @@ begin
 		  end 
 
 		   /*
-		   Se a tabela n„o existe, cria com a estrutura padr„o.
+		   Se a tabela n√£o existe, cria com a estrutura padr√£o.
 		   */       
 		   
 		   if object_id(@cResultTable )is null begin 
@@ -270,7 +270,7 @@ begin
 		   else begin 
 		   
 		      /*
-		      Estrutura da tabela @cResultTable n„o est· aproprida para receber os dados.
+		      Estrutura da tabela @cResultTable n√£o est√° aproprida para receber os dados.
 		      */
 		      
 		      set @cSchemaSyscolumns = parsename(@cResultTable,3)+'.'+parsename(@cResultTable,2)+'.syscolumns'
@@ -294,14 +294,14 @@ begin
     				 				     for xml path('''')
 				       )
 
-				       raiserror(''A definiÁ„o da estrutura da tabela '+@cResultTable+' È diferente das definiÁıes dos dados que ser„o armazenados. As colunas ausentes s„o : %s'',16,1,@cColumns)
+				       raiserror(''A defini√ß√£o da estrutura da tabela '+@cResultTable+' √© diferente das defini√ß√µes dos dados que ser√£o armazenados. As colunas ausentes s√£o : %s'',16,1,@cColumns)
 
 				    end 
 			     end try 
 				 begin catch 
 		            --select ERROR_MESSAGE(), ERROR_LINE() , ERROR_NUMBER()
                     declare @cMessage varchar(max) = ERROR_MESSAGE()
-                    set @cMessage = ''Erro na comparaÁ„o da estrutura da tabela tempor·ria: '' + @cMessage + '', linha '' + CAST(ERROR_LINE() as varchar(4))
+                    set @cMessage = ''Erro na compara√ß√£o da estrutura da tabela tempor√°ria: '' + @cMessage + '', linha '' + CAST(ERROR_LINE() as varchar(4))
                     raiserror(@cMessage , 16 ,1)		    
 				 end catch '
 			     
@@ -319,7 +319,7 @@ begin
 
 /*
        Avaliar para implementar futuramente. 
-       Estatistica de compress„o de dados. 
+       Estatistica de compress√£o de dados. 
        ----------------------------------------------------
        CREATE TABLE #tTMPEstimateDataCompressionSavings
        (
@@ -737,7 +737,7 @@ begin
 
    begin Catch 
         declare @cMessage varchar(max) = ERROR_MESSAGE()
-        set @cMessage = 'Mensagem de erro: ' + @cMessage + ' :: Objeto '+ ERROR_PROCEDURE() + ' :: linha ' + CAST(ERROR_LINE() as varchar(10))+' :: CÛdigo Erro '+ CAST(ERROR_NUMBER() as varchar(10))
+        set @cMessage = 'Mensagem de erro: ' + @cMessage + ' :: Objeto '+ ERROR_PROCEDURE() + ' :: linha ' + CAST(ERROR_LINE() as varchar(10))+' :: C√≥digo Erro '+ CAST(ERROR_NUMBER() as varchar(10))
         raiserror(@cMessage , 16 ,1)
    end Catch 
 
