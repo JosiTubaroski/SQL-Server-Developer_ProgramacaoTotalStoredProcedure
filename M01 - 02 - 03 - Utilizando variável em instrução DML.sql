@@ -1,15 +1,15 @@
 /*
 
-Uma das atividades para quem desenvolve cÛdigo È criar e
-utilizar as vari·veis. 
+Uma das atividades para quem desenvolve c√≥digo √© criar e
+utilizar as vari√°veis. 
 
-No caso do T-SQL, vamos demonstrar como usar vari·veis com as
-instruÁıes DML para 
+No caso do T-SQL, vamos demonstrar como usar vari√°veis com as
+instru√ß√µes DML para 
 
-- Recuperar dados de instruÁıes DML
+- Recuperar dados de instru√ß√µes DML
 - Utilizar elas em filtros de pesquisas no WHERE ou HAVING
-- OpÁ„o de usar na cl·usula TOP 
-- Utilizar na cl·usula SELECT na apresentaÁ„o e operaÁıes de colunas
+- Op√ß√£o de usar na cl√°usula TOP 
+- Utilizar na cl√°usula SELECT na apresenta√ß√£o e opera√ß√µes de colunas
 
 */
 
@@ -24,13 +24,13 @@ use eBook
 Exemplo 01 - Inserir dados de um novo Autor 
 */
 
--- Vari·veis para receber os dados 
+-- Vari√°veis para receber os dados 
 Declare @cNome varchar(260)
 Declare @dNascimento datetime
 
--- Vari·veis de controle e dados padr„o 
+-- Vari√°veis de controle e dados padr√£o 
 Declare @iIDAutor int = (select max(iidAutor) from tCADAutor) + 1
--- O ID desse Autor ser· o ˙ltimo iIDAutor da tabela tCADAutor acrescido de 1 
+-- O ID desse Autor ser√° o √∫ltimo iIDAutor da tabela tCADAutor acrescido de 1 
 
 Declare @dCadastro datetime = getdate() 
 
@@ -50,7 +50,7 @@ go
 
 
 /*
-Sobre a definiÁ„o do conte˙do de @iidAutor 
+Sobre a defini√ß√£o do conte√∫do de @iidAutor 
 6 formas diferentes de se obter o mesmo valor 
 */
 
@@ -93,21 +93,21 @@ use eBook
 -----------------------------------------------------------------------
 Exemplo 02 - Atualizando dados de Autor 
 
-AtualizaÁ„o pelo ID do Autor, alterando o Nome e a Data de Nascimento.
+Atualiza√ß√£o pelo ID do Autor, alterando o Nome e a Data de Nascimento.
 
 */
 
 Select * from tCADAutor where iIDAutor = 17369
 
--- Vari·veis para receber os dados 
+-- Vari√°veis para receber os dados 
 Declare @cNome varchar(260) 
 Declare @dNascimento datetime
 
--- Vari·veis de controle e dados padr„o 
+-- Vari√°veis de controle e dados padr√£o 
 
 Declare @iIDAutor int =  17369
 
-Set @cNome = 'Jo„o da Silva'
+Set @cNome = 'Jo√£o da Silva'
 Set @dNascimento = '1982-12-10'
 
 update tCADAutor 
@@ -118,9 +118,9 @@ update tCADAutor
 
 /*
 Dica !!! Voce pode utilizar o UPDATE para recuperar o dados que foi
-atualizado e colocar em um vari·vel. 
+atualizado e colocar em um vari√°vel. 
 
-Cen·rio. Voce precisa atualizar o preco do livro "The Art of Dreaming"
+Cen√°rio. Voce precisa atualizar o preco do livro "The Art of Dreaming"
 da loja 32 em 7% e capturar esse novo valor.
 
 */
@@ -175,10 +175,10 @@ Select Top (@nQtdLinhas) * from tCADLivro
 
 
 /*
-Na apresentaÁ„o dos dados pela cl·usula SELECT 
+Na apresenta√ß√£o dos dados pela cl√°usula SELECT 
 */
 
--- RelatÛrio para conceder aumento de R$ 100,00 no crÈdito dos clientes
+-- Relat√≥rio para conceder aumento de R$ 100,00 no cr√©dito dos clientes
 
 Declare @mAumento smallmoney = 100.00
 Select cNome, 
@@ -187,7 +187,7 @@ Select cNome,
   From tCADCliente 
 go
 
--- RelatÛrio de calculando o aumento dos livros
+-- Relat√≥rio de calculando o aumento dos livros
 Declare @nPercentualAumento decimal(5,2) 
 Set @nPercentualAumento = 12.50
 
@@ -205,7 +205,7 @@ where Livro.iIDLivro = 2354
 go
 
 /*
-Utilizando vari·vel como contador 
+Utilizando vari√°vel como contador 
 */
 
 Declare @nContagem int = 0
@@ -225,16 +225,16 @@ print @nContagem
 /*
 Dicas:
 
-- Declare todas as vari·veis dentro da mesma regi„o do seu cÛdigo.
-- Se possÌvel, comenta a funÁ„o de cada vari·vel.
-- Evite nomes que n„o s„o legÌveis. Exemplo:
+- Declare todas as vari√°veis dentro da mesma regi√£o do seu c√≥digo.
+- Se poss√≠vel, comenta a fun√ß√£o de cada vari√°vel.
+- Evite nomes que n√£o s√£o leg√≠veis. Exemplo:
 */
 Declare @x int 
 Declare @Valor money 
 Declare @e1 int , @e2 int , @e3 int 
 Declare @saidaA varchar(10), @saidaB varchar(20)
 /*
-- Utilize nomes que d„o sentido ao propÛsito da vari·vel.
+- Utilize nomes que d√£o sentido ao prop√≥sito da vari√°vel.
 */
 
 Declare @iDMovimento int 
@@ -244,7 +244,7 @@ Declare @cRetornoNome varchar(10), @cRetornoSobreNome varchar(20)
 
 /*
 - Define corretamente os tipos de dados. Evite tipos que representam dados
-  que n„o s„o aderente ao negÛcio.
+  que n√£o s√£o aderente ao neg√≥cio.
 */
 Declare @cNome nvarchar(1000)
 Declare @nValorEstoque float 
