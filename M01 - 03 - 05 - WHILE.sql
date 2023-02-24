@@ -3,10 +3,10 @@ While
 
 Executa um bloco de comandos diversas vezes.
 
-- Precisa de uma expressão lógica para repetir o bloco de comandos.
+- Precisa de uma expressÃ£o lÃ³gica para repetir o bloco de comandos.
 
 
-While <Expressão Lógica>
+While <ExpressÃ£o LÃ³gica>
    <Bloco de Comandos>
 
 */
@@ -19,15 +19,15 @@ Processar um intervalo de Itens.
 */
 Set nocount on 
 
-Declare @nContaLivro int = 1 -- @nContaLivro é igual a 1
+Declare @nContaLivro int = 1 -- @nContaLivro Ã© igual a 1
 
-While @nContaLivro < 4 Begin -- Faça enquanto @nContaLivro menor 4
+While @nContaLivro < 4 Begin -- FaÃ§a enquanto @nContaLivro menor 4
 
       Select * 
         From tCADLivro 
        where iIDLivro = @nContaLivro
 
-	   Set @nContalivro += 1 -- Soma 1 na variável @nContaLivro
+	   Set @nContalivro += 1 -- Soma 1 na variÃ¡vel @nContaLivro
 End 
 
 Print @nContalivro
@@ -39,8 +39,8 @@ go
 Processar um intervalo de datas 
 */
 
-Declare @dInicio date = '2018-12-01'  -- Começo do Mês
-Declare @dFinal date  = '2018-12-31'  -- Final do Mês
+Declare @dInicio date = '2018-12-01'  -- ComeÃ§o do MÃªs
+Declare @dFinal date  = '2018-12-31'  -- Final do MÃªs
 
 While @dInicio <= @dFinal begin
 
@@ -93,28 +93,28 @@ Deletando um grande quantidade de linhas !!!
 */
 
 
--- Para relizar a simulação 
+-- Para relizar a simulaÃ§Ã£o 
 drop table if exists tTMPPedidoItem
 
 Select * into tTMPPedidoItem
   From tMOVPedidoItem
 
 
---- Solução 1
+--- SoluÃ§Ã£o 1
 Delete from tTMPPedidoItem where iIDPedidoItem <= 1000000
 
 /*
 Problemas. 
-- Voce teria uma transação aberta e talvez bloqueando a tabela inteira
-- Isso causaria uma sequência de bloqueios em outras conexões.
-- O seu Log de Transação ficaria grande... 
+- Voce teria uma transaÃ§Ã£o aberta e talvez bloqueando a tabela inteira
+- Isso causaria uma sequÃªncia de bloqueios em outras conexÃµes.
+- O seu Log de TransaÃ§Ã£o ficaria grande... 
 */
 
--- Solução 2. Faça DELETE menores. 
+-- SoluÃ§Ã£o 2. FaÃ§a DELETE menores. 
 select count(1) from tTMPPedidoItem where iIDPedidoItem <= 1000000
 
 /*
-São 1.000.000 de linhas e vamos fazer deleções a cada 49.000
+SÃ£o 1.000.000 de linhas e vamos fazer deleÃ§Ãµes a cada 49.000
 --------------
 */
 
@@ -137,14 +137,14 @@ go
 
 
 /*
-Script para aguardar a mudança de uma coluna da tabela 
+Script para aguardar a mudanÃ§a de uma coluna da tabela 
 */
---Outra Sessão 
+--Outra SessÃ£o 
 update tRELEstoque set nQuantidade = 0 where nQuantidade = 1
 
 use eBook
 go
-raiserror('Aguardando liberação do estoque...',10,1) with nowait
+raiserror('Aguardando liberaÃ§Ã£o do estoque...',10,1) with nowait
 
 while (select top 1 1 from tRELEstoque where nQuantidade = 0) is null
       waitfor delay '00:00:10'
@@ -159,7 +159,7 @@ update tRELEstoque set nQuantidade = 1 where nQuantidade = 0
 truncate table tMOVSolicitacaoCompra
 
 /*
-Fazendo o cálculo para vários livros.
+Fazendo o cÃ¡lculo para vÃ¡rios livros.
 */
 
 Begin
@@ -167,32 +167,32 @@ Begin
    Set nocount on 
     
 	/*
-	Procedimento para calcular o consumo médio
-	de um livro nos último 6 meses, calcular a previsão
-	de consumo para os próximos 12 meses e 
+	Procedimento para calcular o consumo mÃ©dio
+	de um livro nos Ãºltimo 6 meses, calcular a previsÃ£o
+	de consumo para os prÃ³ximos 12 meses e 
 	gerar uma solicitacao de compras de livro. 
 	*/
 	
-   Declare @iidSolicitacao int          -- Identificação da solicitação de compras
-	Declare @iIDLivro int				    -- Identificação do Livro
+   Declare @iidSolicitacao int          -- IdentificaÃ§Ã£o da solicitaÃ§Ã£o de compras
+	Declare @iIDLivro int				    -- IdentificaÃ§Ã£o do Livro
 	Declare @nPeso numeric(13,1)		    -- Peso atual do Livro 
 	Declare @nQtdMesesConsumo int		    -- Quantos meses previsto de consumo
 	Declare @nQtdEstoque int			    -- Quantidade de livro no estoque
-	Declare @nQtdMediaConsumida int		 -- Quantidade média consumida de livros
-	Declare @nQtdSolicitada int			 -- Quantidade que será solicitada para compra
-	Declare @mValorEstimado smallmoney   -- Valor estimado da solicitação de compra. 
+	Declare @nQtdMediaConsumida int		 -- Quantidade mÃ©dia consumida de livros
+	Declare @nQtdSolicitada int			 -- Quantidade que serÃ¡ solicitada para compra
+	Declare @mValorEstimado smallmoney   -- Valor estimado da solicitaÃ§Ã£o de compra. 
    Declare @mPesoEstimado numeric(13,1) -- Peso estimado dos livros.
 
-	Declare @dReferencia datetime        -- Data de Referência para o consumo. 
+	Declare @dReferencia datetime        -- Data de ReferÃªncia para o consumo. 
 
-	Set @iIDLivro = 8513 -- Identifica o livro que será utilizado para o cálculo 
+	Set @iIDLivro = 8513 -- Identifica o livro que serÃ¡ utilizado para o cÃ¡lculo 
 	Set @dReferencia = '2018-09-15'
    
-   -- Tabela para dados temporários do livro. (iIDLivro int )
+   -- Tabela para dados temporÃ¡rios do livro. (iIDLivro int )
    Truncate table tTMPLivro
    
    -- Insere na table, 10 ID de livros que tem o estoque abaixo
-   -- do estoque mínimo
+   -- do estoque mÃ­nimo
    Insert into tTMPLivro
    Select top 10 Livro.iidlivro 
      From tCADLivro as Livro 
@@ -201,7 +201,7 @@ Begin
      Where Estoque.nQuantidadeMinima > Estoque.nQuantidade
    
    If @@ROWCOUNT = 0 Begin
-	   Raiserror('Não existem livros para serem processados.',10,1) with nowait
+	   Raiserror('NÃ£o existem livros para serem processados.',10,1) with nowait
       Return 
 	End
 
@@ -221,7 +221,7 @@ Begin
 
          /*
 	      Calcula o estoque atual do livro
-	      e o valor médio para estimativa da compra. 
+	      e o valor mÃ©dio para estimativa da compra. 
 	      */
 	      Select @nQtdEstoque =  SUM(nQuantidade),
 		            @mValorEstimado = AVG(mValor) 
@@ -229,8 +229,8 @@ Begin
 	         Where iIDLivro = @iIDLivro
 
 	      /*
-	      Calcula a quantidade média consumida 
-	      nos últimos seis meses. 
+	      Calcula a quantidade mÃ©dia consumida 
+	      nos Ãºltimos seis meses. 
 	      */
 	      Select @nQtdMediaConsumida = AVG(nQuantidade)
 	         From tMOVPedido as Pedido 
@@ -250,7 +250,7 @@ Begin
             -- Calcula o peso estimado
             Set @mPesoEstimado = @nQtdSolicitada * @nPeso
 
-	         -- Inclui a solicitação de compras.
+	         -- Inclui a solicitaÃ§Ã£o de compras.
           
             Set @iidSolicitacao = next value for seqiIDSolicitacao
 
@@ -268,7 +268,7 @@ Begin
 
 End 
 /*
-Fim do cálculo de Consumo Médio 
+Fim do cÃ¡lculo de Consumo MÃ©dio 
 */
 
 Select * from tMOVSolicitacaoCompra
