@@ -1,12 +1,12 @@
 /*
 Sequence 
 
-Objeto do banco de dados para criar sequenciador numéricos independente 
+Objeto do banco de dados para criar sequenciador numÃ©ricos independente 
 de qualquer tabela. 
 
-A definição do sequenciador é feita para instrução CREATE SEQUENCE
+A definiÃ§Ã£o do sequenciador Ã© feita para instruÃ§Ã£o CREATE SEQUENCE
 
-E o retorno de um valor numérico com a próxima sequência da numeração é 
+E o retorno de um valor numÃ©rico com a prÃ³xima sequÃªncia da numeraÃ§Ã£o Ã© 
 feita pelo comando NEXT VALUE.
 
 */
@@ -19,7 +19,7 @@ Create Sequence NotaFiscal
 	   start with 1 
 	   increment by 1
 
--- Obtem o próximo valor da Sequencia
+-- Obtem o prÃ³ximo valor da Sequencia
 Select Next Value for Notafiscal
 
 -- Reinicia a Sequencia
@@ -30,7 +30,7 @@ Select Next Value for Notafiscal
 
 
 /*
-Usando SEQUENCE na criação de tabelas.
+Usando SEQUENCE na criaÃ§Ã£o de tabelas.
 */
 
 use eBook
@@ -73,7 +73,7 @@ Select * from tTMPPessoas
 Usando o SEQUENCE ante de executar o INSERT 
 */
 
-Declare @iidPessoa int -- Define uma variável do tipo INT.
+Declare @iidPessoa int -- Define uma variÃ¡vel do tipo INT.
 Set @iidPessoa = Next Value for seqIDPessoa 
 
 Insert into tTMPPessoas (iIDPessoa, cNome) 
@@ -85,7 +85,7 @@ Select * from tTMPPessoas
 
 
 /*
-Consultando as informações do sequenciador. 
+Consultando as informaÃ§Ãµes do sequenciador. 
 */
 
 select * from sys.sequences
@@ -99,23 +99,23 @@ Comparando o IDENTITY() x SEQUENCE
 
 /*
 SEQUENCE	- Independente de tabela e coluna.
-IDENTITY	- Associado a uma tabela e coluna. Só pode exisitr uma coluna IDENTITY()
+IDENTITY	- Associado a uma tabela e coluna. SÃ³ pode exisitr uma coluna IDENTITY()
 
-SEQUENCE	- Deve ser chamado pela comando NEXT VALUE para obter o próximo valor 
-IDENTITY	- O próximo valor é gerado automaticamente. 
+SEQUENCE	- Deve ser chamado pela comando NEXT VALUE para obter o prÃ³ximo valor 
+IDENTITY	- O prÃ³ximo valor Ã© gerado automaticamente. 
 
-SEQUENCE	- A sequencia de números pode ser reiniciada. 
-IDENTITY	- Após atingir o valor máximo do tipo da coluna, não pode mais inserir linhas.
+SEQUENCE	- A sequencia de nÃºmeros pode ser reiniciada. 
+IDENTITY	- ApÃ³s atingir o valor mÃ¡ximo do tipo da coluna, nÃ£o pode mais inserir linhas.
 
-SEQUENCE	- Como ele é independente da tabela, pode se usado no comando UPDATE.
-IDENTITY	- O valor pode se mudado, mas requer utilizar a instrução 
-              SET IDENTITY_INSERT antes e depois da atualização
+SEQUENCE	- Como ele Ã© independente da tabela, pode se usado no comando UPDATE.
+IDENTITY	- O valor pode se mudado, mas requer utilizar a instruÃ§Ã£o 
+              SET IDENTITY_INSERT antes e depois da atualizaÃ§Ã£o
 
-SEQUENCE	- Com certas configurações, ela mantém os dados em cache o que garante melhor desempenho.
+SEQUENCE	- Com certas configuraÃ§Ãµes, ela mantÃ©m os dados em cache o que garante melhor desempenho.
 IDENTITY	- Mante os dados persistidos em disco.
 */
 
 
--- Na minha visão, ele deve ser utilizado no lugar do IDENTITY()
+-- Na minha visÃ£o, ele deve ser utilizado no lugar do IDENTITY()
 
 
