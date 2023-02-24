@@ -1,10 +1,10 @@
 /*
 
-A utilizaÁ„o de vari·vel comeÁa como a associaÁ„o de 
-um valor que ser· atribuido a varÌavel.
+A utiliza√ß√£o de vari√°vel come√ßa como a associa√ß√£o de 
+um valor que ser√° atribuido a var√≠avel.
 
 SET
-SELECT, declarando direto valor na vari·vel.
+SELECT, declarando direto valor na vari√°vel.
 SELECT, carregando os dados do resultado de uma consulta.
 
 */
@@ -29,7 +29,7 @@ go
 
 
 /*
-Atribuindo valor a partir de funÁıes do SQL Server 
+Atribuindo valor a partir de fun√ß√µes do SQL Server 
 */
 
 Declare @dDiaHoje datetime = getdate()
@@ -57,7 +57,7 @@ Declare @cNome varchar(200)
 Declare @cSobreNome varchar(200), @cNomeCompleto varchar(200) 
 Set @cNome = 'Jose' 
 Set @cSobreNome  = 'da Silva' 
-Select @cNomeCompleto = @cNome + ' ' +@cSobreNome -- FunÁ„o de atribuir
+Select @cNomeCompleto = @cNome + ' ' +@cSobreNome -- Fun√ß√£o de atribuir
 Raiserror(@cNomeCompleto, 10,1)
 go
 
@@ -141,7 +141,7 @@ set @xEnviarPedido = (Select *
 Select @xEnviarPedido
 
 /*
-AtribuiÁ„o de OperaÁ„o 
+Atribui√ß√£o de Opera√ß√£o 
 */
 
 Declare @mValor int = 50
@@ -156,11 +156,11 @@ Set @mValor = @mValor + 100
 Select @mValor
 
 /*
- +=   AdiÁ„o
- -=   SubtraÁ„o
- *=   MultiplicaÁ„o
- /=   Divis„o
- %=   MÛdulo 
+ +=   Adi√ß√£o
+ -=   Subtra√ß√£o
+ *=   Multiplica√ß√£o
+ /=   Divis√£o
+ %=   M√≥dulo 
 
 */
 
