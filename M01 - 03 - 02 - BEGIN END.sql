@@ -2,7 +2,7 @@
 
 BEGIN / END
 
-Agrupa v·rias instruÁıes em um bloco de comandos. 
+Agrupa v√°rias instru√ß√µes em um bloco de comandos. 
 
 BEGIN
    <Comandos>
@@ -84,7 +84,7 @@ go
 
 
 /*
-Se voce tirar todos os blocos, o script ser· igual ao exemplo abaixo. 
+Se voce tirar todos os blocos, o script ser√° igual ao exemplo abaixo. 
 */
 
 /*
@@ -105,7 +105,7 @@ Raiserror('Pedido cancelado', 10,1)
 
 
 /*
-Exemplo de script com coment·rios, definiÁ„o de vari·veis e bloco BEGIN/END
+Exemplo de script com coment√°rios, defini√ß√£o de vari√°veis e bloco BEGIN/END
 */
 
 use eBook
@@ -117,25 +117,25 @@ Begin
    Set nocount on 
 
 	/*
-	Procedimento para calcular o consumo mÈdio
-	de um livro nos ˙ltimo 6 meses, calcular a previs„o
-	de consumo para os prÛximos 12 meses e 
+	Procedimento para calcular o consumo m√©dio
+	de um livro nos √∫ltimo 6 meses, calcular a previs√£o
+	de consumo para os pr√≥ximos 12 meses e 
 	gerar uma solicitacao de compras de livro. 
 	*/
 		
-   Declare @iidSolicitacao int         -- IdentificaÁ„o da solicitaÁ„o de compras
-	Declare @iIDLivro int				   -- IdentificaÁ„o do Livro
+   Declare @iidSolicitacao int         -- Identifica√ß√£o da solicita√ß√£o de compras
+	Declare @iIDLivro int				   -- Identifica√ß√£o do Livro
 	Declare @nPeso numeric(13,1)		   -- Peso atual do Livro 
 	Declare @nQtdMesesConsumo int		   -- Quantos meses previsto de consumo
 	Declare @nQtdEstoque int			   -- Quantidade de livro no estoque
-	Declare @nQtdMediaConsumida int		-- Quantidade mÈdia consumida de livros
-	Declare @nQtdSolicitada int			-- Quantidade que ser· solicitada para compra
-	Declare @mValorEstimado smallmoney  -- Valor estimado da solicitaÁ„o de compra. 
+	Declare @nQtdMediaConsumida int		-- Quantidade m√©dia consumida de livros
+	Declare @nQtdSolicitada int			-- Quantidade que ser√° solicitada para compra
+	Declare @mValorEstimado smallmoney  -- Valor estimado da solicita√ß√£o de compra. 
    Declare @mPesoEstimado numeric(13,1) -- Peso estimado dos livros.
 
-	Declare @dReferencia datetime  -- Data de ReferÍncia para o consumo. 
+	Declare @dReferencia datetime  -- Data de Refer√™ncia para o consumo. 
 
-	Set @iIDLivro = 8513 -- Identifica o livro que ser· utilizado para o c·lculo 
+	Set @iIDLivro = 8513 -- Identifica o livro que ser√° utilizado para o c√°lculo 
 	Set @dReferencia = '2018-09-15'
 	
 	/*
@@ -149,7 +149,7 @@ Begin
 
 	/*
 	Calcula o estoque atual do livro
-	e o valor mÈdio para estimativa da compra. 
+	e o valor m√©dio para estimativa da compra. 
 	*/
 	Select @nQtdEstoque =  SUM(nQuantidade),
 		    @mValorEstimado = AVG(mValor) 
@@ -157,8 +157,8 @@ Begin
 	 Where iIDLivro = @iIDLivro
 
 	/*
-	Calcula a quantidade mÈdia consumida 
-	nos ˙ltimos seis meses. 
+	Calcula a quantidade m√©dia consumida 
+	nos √∫ltimos seis meses. 
 	*/
 	Select @nQtdMediaConsumida = AVG(nQuantidade)
 	  From tMOVPedido as Pedido 
@@ -176,7 +176,7 @@ Begin
    -- Calcula o peso estimado
    set @mPesoEstimado = @nQtdSolicitada * @nPeso
 
-	-- Inclui a solicitaÁ„o de compras.
+	-- Inclui a solicita√ß√£o de compras.
    set @iidSolicitacao = next value for seqiIDSolicitacao
 
 	insert into tMOVSolicitacaoCompra
@@ -186,7 +186,7 @@ Begin
 
 End 
 /*
-Fim do c·lculo de Consumo MÈdio 
+Fim do c√°lculo de Consumo M√©dio 
 */
 
 select * from tMOVSolicitacaoCompra
