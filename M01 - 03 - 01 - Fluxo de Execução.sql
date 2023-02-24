@@ -1,9 +1,9 @@
 /*
-Fluxo de execução 
+Fluxo de execuÃ§Ã£o 
 
-- Execução sequêncial de um conjunto de instruções. 
+- ExecuÃ§Ã£o sequÃªncial de um conjunto de instruÃ§Ãµes. 
 
-<Ponto de Início>
+<Ponto de InÃ­cio>
    <Comandos...>
    <Comandos...>
    <Comandos...>
@@ -12,40 +12,40 @@ Fluxo de execução
    <Comandos...>
    <Comandos...>
    <Comandos...>
-<Ponto de Término>
+<Ponto de TÃ©rmino>
 
-- Execução sequêncial com desvio no fluxo de instruções. 
+- ExecuÃ§Ã£o sequÃªncial com desvio no fluxo de instruÃ§Ãµes. 
 
-<Ponto de Início>
+<Ponto de InÃ­cio>
    <Comandos...>
    <Comandos...>
    <Comandos...>
-   if <Condição>
+   if <CondiÃ§Ã£o>
       <Comandos...>
    else 
       <Comandos...>
    <Comandos...>
    <Comandos...>
    <Comandos...>
-<Ponto de Término>
+<Ponto de TÃ©rmino>
 
-- Execução sequêncial com repetição de instruções. 
+- ExecuÃ§Ã£o sequÃªncial com repetiÃ§Ã£o de instruÃ§Ãµes. 
 
-<Ponto de Início>
+<Ponto de InÃ­cio>
    <Comandos...>
    <Comandos...>
    <Comandos...>
-   While <Condição>
+   While <CondiÃ§Ã£o>
       <Comandos...>
    <Comandos...>
    <Comandos...>
    <Comandos...>
    <Comandos...>
-<Ponto de Término>
+<Ponto de TÃ©rmino>
 
-- Execução sequêncial com chamada de Stored Procedure 
+- ExecuÃ§Ã£o sequÃªncial com chamada de Stored Procedure 
 
-<Ponto de Início>    
+<Ponto de InÃ­cio>    
    <Comandos...>
    <Comandos...>
    <Comandos...>
@@ -53,10 +53,10 @@ Fluxo de execução
    <Comandos...>
    <Comandos...>
    <Comandos...>
-<Ponto de Término>
+<Ponto de TÃ©rmino>
 
 <Procedure01>
-<Ponto de Início>
+<Ponto de InÃ­cio>
    <Comandos...>
    <Comandos...>
    <Comandos...>
@@ -65,7 +65,7 @@ Fluxo de execução
    <Comandos...>
    <Comandos...>
    <Comandos...>
-<Ponto de Término>
+<Ponto de TÃ©rmino>
 
 
 
@@ -81,29 +81,29 @@ Truncate table tMOVSolicitacaoCompra
 
 
 /*
-Início do calculo de Consumo Médio 
+InÃ­cio do calculo de Consumo MÃ©dio 
 */
 
 /*
-Procedimento para calcular o consumo médio
-de um livro nos último 6 meses, calcular a previsão
-de consumo para os próximos 12 meses e 
+Procedimento para calcular o consumo mÃ©dio
+de um livro nos Ãºltimo 6 meses, calcular a previsÃ£o
+de consumo para os prÃ³ximos 12 meses e 
 gerar uma solicitacao de compras de livro. 
 */
 
-Declare @iidSolicitacao int          -- Identificação da solicitação de compras
-Declare @iIDLivro int				    -- Identificação do Livro
+Declare @iidSolicitacao int          -- IdentificaÃ§Ã£o da solicitaÃ§Ã£o de compras
+Declare @iIDLivro int				    -- IdentificaÃ§Ã£o do Livro
 Declare @nPeso numeric(13,1)		    -- Peso atual do Livro 
 Declare @nQtdMesesConsumo int		    -- Quantos meses previsto de consumo
 Declare @nQtdEstoque int			    -- Quantidade de livro no estoque
-Declare @nQtdMediaConsumida int		 -- Quantidade média consumida de livros
-Declare @nQtdSolicitada int			 -- Quantidade que será solicitada para compra
-Declare @mValorEstimado smallmoney   -- Valor estimado da solicitação de compra. 
+Declare @nQtdMediaConsumida int		 -- Quantidade mÃ©dia consumida de livros
+Declare @nQtdSolicitada int			 -- Quantidade que serÃ¡ solicitada para compra
+Declare @mValorEstimado smallmoney   -- Valor estimado da solicitaÃ§Ã£o de compra. 
 Declare @mPesoEstimado numeric(13,1) -- Peso estimado dos livros.
 
-Declare @dReferencia datetime  -- Data de Referência para o consumo. 
+Declare @dReferencia datetime  -- Data de ReferÃªncia para o consumo. 
 
-Set @iIDLivro = 8513 -- Identifica o livro que será utilizado para o cálculo 
+Set @iIDLivro = 8513 -- Identifica o livro que serÃ¡ utilizado para o cÃ¡lculo 
 Set @dReferencia = '2018-09-15'
 
 /*
@@ -117,7 +117,7 @@ Select @nPeso = nPeso ,
 
 /*
 Calcula o estoque atual do livro
-e o valor médio para estimativa da compra. 
+e o valor mÃ©dio para estimativa da compra. 
 */
 Select @nQtdEstoque = SUM(nQuantidade),
        @mValorEstimado = AVG(mValor) 
@@ -125,8 +125,8 @@ Select @nQtdEstoque = SUM(nQuantidade),
  Where iIDLivro = @iIDLivro
 
 /*
-Calcula a quantidade média consumida 
-nos últimos seis meses. 
+Calcula a quantidade mÃ©dia consumida 
+nos Ãºltimos seis meses. 
 */
 Select @nQtdMediaConsumida = AVG(nQuantidade)
   From tMOVPedido as Pedido 
@@ -144,14 +144,14 @@ set @mValorEstimado = @mValorEstimado * @nQtdSolicitada
 -- Calcula o peso estimado
 set @mPesoEstimado = @nQtdSolicitada * @nPeso
 
--- Inclui a solicitação de compras.
+-- Inclui a solicitaÃ§Ã£o de compras.
 insert into tMOVSolicitacaoCompra
 (iIDLivro, nQuantidade , mValorEstimado, mPesoEstimado)
 Values 
 (@iIDLivro,@nQtdSolicitada , @mValorEstimado,@mPesoEstimado) 
 
 /*
-Fim do cálculo de Consumo Médio 
+Fim do cÃ¡lculo de Consumo MÃ©dio 
 */
 
 select * from tMOVSolicitacaoCompra
