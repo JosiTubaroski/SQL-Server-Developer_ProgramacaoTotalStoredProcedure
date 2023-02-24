@@ -1,14 +1,14 @@
 /*
 Bloco TRY e CATCH 
 
-Controla as exceções e tratamento de erros.
+Controla as exceÃ§Ãµes e tratamento de erros.
 
-O bloco TRY controlas as exceções, detectando os erros gerados por comandos
-ou pela instrução raiserror() e envia para bloco CATCH.
+O bloco TRY controlas as exceÃ§Ãµes, detectando os erros gerados por comandos
+ou pela instruÃ§Ã£o raiserror() e envia para bloco CATCH.
 
 O bloco CACTH recebe do bloco TRY o erro, identifica os valores retornados 
-usando funções de tratamento de erro exclusivas desse bloco. Neste bloco
-você tem a opção de devolver o erro para que fez a chamado ou tratar o erro para 
+usando funÃ§Ãµes de tratamento de erro exclusivas desse bloco. Neste bloco
+vocÃª tem a opÃ§Ã£o de devolver o erro para que fez a chamado ou tratar o erro para 
 gerar um log em tabela ou no SQL Server Logs. 
 
 -------------------
@@ -40,16 +40,16 @@ End Catch
 
 
 - Blocos TRY e CATCH deve ficar juntos.
-- Não pode existir comandos entre os blocos.
-- Somente erros com severidade acima de 10 são detectados.
-- Se não houver erro no bloco TRY, o fluxo é desviado para a próximo instrução
+- NÃ£o pode existir comandos entre os blocos.
+- Somente erros com severidade acima de 10 sÃ£o detectados.
+- Se nÃ£o houver erro no bloco TRY, o fluxo Ã© desviado para a prÃ³ximo instruÃ§Ã£o
   abaixo do End Catch
-- Voce pode decidir continuar a execução ou interromper no tratamento do erro 
+- Voce pode decidir continuar a execuÃ§Ã£o ou interromper no tratamento do erro 
 */
 
 
 /*
-Exemplo com erro de divisão por zero 
+Exemplo com erro de divisÃ£o por zero 
 
 - Simular sem o erro - SELECT 1/1
 - Simular com o erro - SELECT 1/0 
@@ -60,23 +60,23 @@ Begin
 
    set nocount on 
 
-   raiserror('01. Teste de simulação de erro',10,1) with nowait 
+   raiserror('01. Teste de simulaÃ§Ã£o de erro',10,1) with nowait 
 
    Begin Try
 
-      Raiserror('02. Inicio Teste de simulação de erro',10,1) with nowait 
+      Raiserror('02. Inicio Teste de simulaÃ§Ã£o de erro',10,1) with nowait 
 	   Select 1/0
-	   Raiserror('03. Final Teste de simulação de erro',10,1) with nowait 
+	   Raiserror('03. Final Teste de simulaÃ§Ã£o de erro',10,1) with nowait 
 
    End Try
 
    Begin Catch
 
-       Raiserror('99. Identificação do erro.',10,1) with nowait 
+       Raiserror('99. IdentificaÃ§Ã£o do erro.',10,1) with nowait 
 
    End Catch 
 
-   raiserror('04. Teste de simulação de erro',10,1) with nowait 
+   raiserror('04. Teste de simulaÃ§Ã£o de erro',10,1) with nowait 
 
 End 
 /*
@@ -102,7 +102,7 @@ Begin
          If datepart(dw,@dData) in (1,7)
 	         Set @nResultado = 1/0 
 
-	      Raiserror('Lançamentos de contabilizado',10,1)  
+	      Raiserror('LanÃ§amentos de contabilizado',10,1)  
 
       End Try 
 
@@ -125,7 +125,7 @@ go
 
 /*
 Identificando o erro no block CATCH 
-Como vimos a função @@ERROR, vamos usar junto com o bloco TRY e CATCH 
+Como vimos a funÃ§Ã£o @@ERROR, vamos usar junto com o bloco TRY e CATCH 
 */
 
 -- Exemplo 
@@ -140,7 +140,7 @@ Begin
    Begin Catch 
 
       If @@ERROR = 8134
-         Raiserror('Ocorreu um erro de divisão por zero.',10,1)
+         Raiserror('Ocorreu um erro de divisÃ£o por zero.',10,1)
 
    End Catch 
 
@@ -149,16 +149,16 @@ End
 Fim do exemplo 
 */
 
--- Exemplo de atualização de dados com erro.
+-- Exemplo de atualizaÃ§Ã£o de dados com erro.
 use eBook
 go
 
 Begin 
 
    Declare @cNome varchar(100)   -- Recebe o nome do Cliente
-   Declare @iIDCliente int       -- Recebe o ID do cleinte que será alterado 
+   Declare @iIDCliente int       -- Recebe o ID do cleinte que serÃ¡ alterado 
    Declare @mCredito smallmoney  -- Recebe o valor de credito concedido para o Cliente 
-   Declare @nCodigoErro int      -- Armazena o código do erro  
+   Declare @nCodigoErro int      -- Armazena o cÃ³digo do erro  
 
    Set @iIDCliente = 33612
 
@@ -173,7 +173,7 @@ Begin
 
           Update tCADCliente 
              Set cNome = @cNome, -- Primeiro erro, dados truncados 
-                 mCredito = 0    -- Segundo erro, violação da restrição CHECK  
+                 mCredito = 0    -- Segundo erro, violaÃ§Ã£o da restriÃ§Ã£o CHECK  
            Where iIDCliente = 33612
        
    End Try
@@ -182,15 +182,15 @@ Begin
 
       Set @nCodigoErro = @@ERROR
    
-      -- Os dados de cadeia ou binários ficariam truncados.
+      -- Os dados de cadeia ou binÃ¡rios ficariam truncados.
       If @nCodigoErro = 8152
-         Raiserror('Erro 8152. Os dados de cadeia ou binários ficariam truncados.',10,1)
+         Raiserror('Erro 8152. Os dados de cadeia ou binÃ¡rios ficariam truncados.',10,1)
       
-      -- Conflito entre a instrução UPDATE e a restrição CHECK 
+      -- Conflito entre a instruÃ§Ã£o UPDATE e a restriÃ§Ã£o CHECK 
       -- "CK__tCADClien__mCred__3D5E1FD2". O conflito ocorreu na base de 
       -- dados "eBook", tabela "dbo.tCADCliente", column 'mCredito'.
       If @nCodigoErro = 547
-         Raiserror('Erro 547. Conflito entre a instrução UPDATE e a restrição CHECK.' ,10,1)
+         Raiserror('Erro 547. Conflito entre a instruÃ§Ã£o UPDATE e a restriÃ§Ã£o CHECK.' ,10,1)
       Else 
          Print 'Codigo de error ' + cast(@nCodigoErro as varchar(10))
 
@@ -203,7 +203,7 @@ Fim do Exemplo
 
 
 /*
-Alguns erros não são capturados. 
+Alguns erros nÃ£o sÃ£o capturados. 
 */
 
 Begin  try
@@ -219,7 +219,7 @@ go
 use eBook
 go
 /*
-Fazendo o cálculo para vários livros.
+Fazendo o cÃ¡lculo para vÃ¡rios livros.
 */
 
 Begin
@@ -227,28 +227,28 @@ Begin
    Set nocount on 
     
 	/*
-	Procedimento para calcular o consumo médio
-	de um livro nos último 6 meses, calcular a previsão
-	de consumo para os próximos 12 meses e 
+	Procedimento para calcular o consumo mÃ©dio
+	de um livro nos Ãºltimo 6 meses, calcular a previsÃ£o
+	de consumo para os prÃ³ximos 12 meses e 
 	gerar uma solicitacao de compras de livro. 
 	*/
 	
-   Declare @iidSolicitacao int          -- Identificação da solicitação de compras
-	Declare @iIDLivro int				    -- Identificação do Livro
+   Declare @iidSolicitacao int          -- IdentificaÃ§Ã£o da solicitaÃ§Ã£o de compras
+	Declare @iIDLivro int				    -- IdentificaÃ§Ã£o do Livro
 	Declare @nPeso numeric(13,1)		    -- Peso atual do Livro 
 	Declare @nQtdMesesConsumo int		    -- Quantos meses previsto de consumo
 	Declare @nQtdEstoque int			    -- Quantidade de livro no estoque
-	Declare @nQtdMediaConsumida int		 -- Quantidade média consumida de livros
-	Declare @nQtdSolicitada int			 -- Quantidade que será solicitada para compra
-	Declare @mValorEstimado smallmoney   -- Valor estimado da solicitação de compra. 
+	Declare @nQtdMediaConsumida int		 -- Quantidade mÃ©dia consumida de livros
+	Declare @nQtdSolicitada int			 -- Quantidade que serÃ¡ solicitada para compra
+	Declare @mValorEstimado smallmoney   -- Valor estimado da solicitaÃ§Ã£o de compra. 
    Declare @mPesoEstimado numeric(13,1) -- Peso estimado dos livros.
 
-	Declare @dReferencia datetime        -- Data de Referência para o consumo. 
+	Declare @dReferencia datetime        -- Data de ReferÃªncia para o consumo. 
 
-	Set @iIDLivro = 8513 -- Identifica o livro que será utilizado para o cálculo 
+	Set @iIDLivro = 8513 -- Identifica o livro que serÃ¡ utilizado para o cÃ¡lculo 
 	Set @dReferencia = '2018-09-15'
    
-   -- Tabela para dados temporários do livro. (iIDLivro int )
+   -- Tabela para dados temporÃ¡rios do livro. (iIDLivro int )
    Truncate table tTMPLivro
    
    Insert into tTMPLivro
@@ -259,7 +259,7 @@ Begin
      Where Estoque.nQuantidadeMinima > Estoque.nQuantidade
    
    If @@ROWCOUNT = 0 Begin
-	   Raiserror('Não existem livros para serem processados.',10,1)
+	   Raiserror('NÃ£o existem livros para serem processados.',10,1)
       Return 
 	End
 
@@ -278,7 +278,7 @@ Begin
 
          /*
 	      Calcula o estoque atual do livro
-	      e o valor médio para estimativa da compra. 
+	      e o valor mÃ©dio para estimativa da compra. 
 	      */
 	      Select @nQtdEstoque =  SUM(nQuantidade),
 		            @mValorEstimado = AVG(mValor) 
@@ -286,8 +286,8 @@ Begin
 	         Where iIDLivro = @iIDLivro
 
 	      /*
-	      Calcula a quantidade média consumida 
-	      nos últimos seis meses. 
+	      Calcula a quantidade mÃ©dia consumida 
+	      nos Ãºltimos seis meses. 
 	      */
 	      Select @nQtdMediaConsumida = AVG(nQuantidade)
 	         From tMOVPedido as Pedido 
@@ -307,7 +307,7 @@ Begin
             -- Calcula o peso estimado
             Set @mPesoEstimado = @nQtdSolicitada * @nPeso
 
-	         -- Inclui a solicitação de compras.
+	         -- Inclui a solicitaÃ§Ã£o de compras.
           
             Set @iidSolicitacao = next value for seqiIDSolicitacao
 
@@ -322,7 +322,7 @@ Begin
 
             Begin Catch
 
-               Raiserror('Houve um erro na inclusão da Solicitação de Compras',10,1)
+               Raiserror('Houve um erro na inclusÃ£o da SolicitaÃ§Ã£o de Compras',10,1)
 
             End Catch 
    
@@ -334,7 +334,7 @@ Begin
 
 End 
 /*
-Fim do cálculo de Consumo Médio 
+Fim do cÃ¡lculo de Consumo MÃ©dio 
 */
 
 Select * from tMOVSolicitacaoCompra
