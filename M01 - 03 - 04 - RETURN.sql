@@ -1,7 +1,7 @@
 /*  
 Return 
 
-Finaliza a execução de um conjunto de instruções em lote ou de uma
+Finaliza a execuÃ§Ã£o de um conjunto de instruÃ§Ãµes em lote ou de uma
 stored procedure.
 
 */
@@ -37,7 +37,7 @@ Begin
       End 
    Else
       Begin 
-         raiserror('Cliente não cadastrado.',10,1)
+         raiserror('Cliente nÃ£o cadastrado.',10,1)
 		   Return 
 	   End
 	   
@@ -56,25 +56,25 @@ Begin
    Set nocount on 
     
 	/*
-	Procedimento para calcular o consumo médio
-	de um livro nos último 6 meses, calcular a previsão
-	de consumo para os próximos 12 meses e 
+	Procedimento para calcular o consumo mÃ©dio
+	de um livro nos Ãºltimo 6 meses, calcular a previsÃ£o
+	de consumo para os prÃ³ximos 12 meses e 
 	gerar uma solicitacao de compras de livro. 
 	*/
 	
-   Declare @iidSolicitacao int         -- Identificação da solicitação de compras
-	Declare @iIDLivro int				   -- Identificação do Livro
+   Declare @iidSolicitacao int         -- IdentificaÃ§Ã£o da solicitaÃ§Ã£o de compras
+	Declare @iIDLivro int				   -- IdentificaÃ§Ã£o do Livro
 	Declare @nPeso numeric(13,1)		   -- Peso atual do Livro 
 	Declare @nQtdMesesConsumo int		   -- Quantos meses previsto de consumo
 	Declare @nQtdEstoque int			   -- Quantidade de livro no estoque
-	Declare @nQtdMediaConsumida int		-- Quantidade média consumida de livros
-	Declare @nQtdSolicitada int			-- Quantidade que será solicitada para compra
-	Declare @mValorEstimado smallmoney  -- Valor estimado da solicitação de compra. 
+	Declare @nQtdMediaConsumida int		-- Quantidade mÃ©dia consumida de livros
+	Declare @nQtdSolicitada int			-- Quantidade que serÃ¡ solicitada para compra
+	Declare @mValorEstimado smallmoney  -- Valor estimado da solicitaÃ§Ã£o de compra. 
    Declare @mPesoEstimado numeric(13,1) -- Peso estimado dos livros.
 
-	Declare @dReferencia datetime  -- Data de Referência para o consumo. 
+	Declare @dReferencia datetime  -- Data de ReferÃªncia para o consumo. 
 
-	Set @iIDLivro = 8513 -- Identifica o livro que será utilizado para o cálculo 
+	Set @iIDLivro = 8513 -- Identifica o livro que serÃ¡ utilizado para o cÃ¡lculo 
 	Set @dReferencia = '2018-09-15'
 
 	/*
@@ -87,13 +87,13 @@ Begin
 	 Where iIDLivro = @iIDLivro
 
 	if @@ROWCOUNT = 0 Begin
-	   raiserror('O ID do livro não foi encontrado',10,1)
+	   raiserror('O ID do livro nÃ£o foi encontrado',10,1)
       Return 
 	End
  
    /*
 	Calcula o estoque atual do livro
-	e o valor médio para estimativa da compra. 
+	e o valor mÃ©dio para estimativa da compra. 
 	*/
 	Select @nQtdEstoque =  SUM(nQuantidade),
 		      @mValorEstimado = AVG(mValor) 
@@ -101,8 +101,8 @@ Begin
 	   Where iIDLivro = @iIDLivro
 
 	/*
-	Calcula a quantidade média consumida 
-	nos últimos seis meses. 
+	Calcula a quantidade mÃ©dia consumida 
+	nos Ãºltimos seis meses. 
 	*/
 	Select @nQtdMediaConsumida = AVG(nQuantidade)
 	   From tMOVPedido as Pedido 
@@ -120,7 +120,7 @@ Begin
    -- Calcula o peso estimado
    set @mPesoEstimado = @nQtdSolicitada * @nPeso
 
-	-- Inclui a solicitação de compras.
+	-- Inclui a solicitaÃ§Ã£o de compras.
           
    set @iidSolicitacao = next value for seqiIDSolicitacao
 
@@ -131,7 +131,7 @@ Begin
    
 End 
 /*
-Fim do cálculo de Consumo Médio 
+Fim do cÃ¡lculo de Consumo MÃ©dio 
 */
 
 select * from tMOVSolicitacaoCompra
