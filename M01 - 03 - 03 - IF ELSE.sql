@@ -3,10 +3,10 @@ IF / ELSE
 
 Causa um desvio condicional no fluxo de comandos.
 
-- Precisa de uma express„o lÛgica para validar o desvio.
-- Else È opcional.
+- Precisa de uma express√£o l√≥gica para validar o desvio.
+- Else √© opcional.
 
-IF <Express„o lÛgica>
+IF <Express√£o l√≥gica>
    <Bloco de comandos>
 Else 
    <Bloco de comandos>
@@ -37,36 +37,36 @@ update tMOVPedido
 if @@rowcount > 0 
   raiserror('O comando foi processado', 10,1)
 else 
-  raiserror('O Pedido n„o foi encontrado', 10,1)
+  raiserror('O Pedido n√£o foi encontrado', 10,1)
 
 
 
 /*
-CondiÁ„o lÛgica 
+Condi√ß√£o l√≥gica 
 */
 
--- Uma funÁ„o do SQL Server 
+-- Uma fun√ß√£o do SQL Server 
 if datepart(dw,getdate()) in (1,7)
 
-   raiserror('Hoje È um final de semana',10,1)
+   raiserror('Hoje √© um final de semana',10,1)
 
 else 
 
-   raiserror('Hoje È um dia de semana',10,1)
+   raiserror('Hoje √© um dia de semana',10,1)
 
 
 
 -- Dados escalar de uma tabela. 
 if (select iidcliente from tCADcliente where iidcliente = 1)  > 0
 
-   raiserror('Cliente j· cadastrado.',10,1)
+   raiserror('Cliente j√° cadastrado.',10,1)
 
 else
 
-   raiserror('Cliente n„o cadastrado.',10,1)
+   raiserror('Cliente n√£o cadastrado.',10,1)
 
 /*
-Agrupando v·rios comandos.
+Agrupando v√°rios comandos.
 
 IF e ELSE tem que utilizar BEGIN/END 
 */
@@ -81,7 +81,7 @@ if (Select iidcliente From tCADcliente Where iidcliente = 1)  > 0
 
 else
 
-   raiserror('Cliente n„o cadastrado.',10,1)
+   raiserror('Cliente n√£o cadastrado.',10,1)
 
 go 
 
@@ -89,8 +89,8 @@ go
 Msg 156, Level 15, State 1, Line 64
 Incorrect syntax near the keyword 'else'.
 
-Apesar da mensagem n„o informar a real causa do erro,
-o que ocorre È que temos dois comandos depois do IF.
+Apesar da mensagem n√£o informar a real causa do erro,
+o que ocorre √© que temos dois comandos depois do IF.
 */
 
 /*
@@ -110,7 +110,7 @@ Begin
 
    Else
 
-      raiserror('Cliente n„o cadastrado.',10,1)
+      raiserror('Cliente n√£o cadastrado.',10,1)
 
 End
 
@@ -121,9 +121,9 @@ ou mais comandos no ELSE, voce tem que utilizar BEGIN/END
 */
 
 /*
-Dica na utilizaÁ„o do @@rowcount.
+Dica na utiliza√ß√£o do @@rowcount.
 
-- Utilizar o @@rowcount imediatamente apÛs a instruÁ„o DML.
+- Utilizar o @@rowcount imediatamente ap√≥s a instru√ß√£o DML.
 */
 Select COUNT(1) from tCADLivro where iIDDestaque = 1
 
@@ -137,7 +137,7 @@ Update tCADLivro
 Set @nRetorno = 1 
 
 if @@ROWCOUNT > 1
-   raiserror('V·rias linhas foram atualizadas',10,1)
+   raiserror('V√°rias linhas foram atualizadas',10,1)
 
 go 
 
@@ -150,7 +150,7 @@ Update tCADLivro
  Where iIDDestaque = 1 
 
 If @@ROWCOUNT > 1
-   raiserror('V·rias linhas foram atualizadas',10,1)
+   raiserror('V√°rias linhas foram atualizadas',10,1)
 
 Set @nRetorno = 1 
 
@@ -163,25 +163,25 @@ Begin
    Set nocount on 
     
 	/*
-	Procedimento para calcular o consumo mÈdio
-	de um livro nos ˙ltimo 6 meses, calcular a previs„o
-	de consumo para os prÛximos 12 meses e 
+	Procedimento para calcular o consumo m√©dio
+	de um livro nos √∫ltimo 6 meses, calcular a previs√£o
+	de consumo para os pr√≥ximos 12 meses e 
 	gerar uma solicitacao de compras de livro. 
 	*/
 	
-   Declare @iidSolicitacao int         -- IdentificaÁ„o da solicitaÁ„o de compras
-	Declare @iIDLivro int				   -- IdentificaÁ„o do Livro
+   Declare @iidSolicitacao int         -- Identifica√ß√£o da solicita√ß√£o de compras
+	Declare @iIDLivro int				   -- Identifica√ß√£o do Livro
 	Declare @nPeso numeric(13,1)		   -- Peso atual do Livro 
 	Declare @nQtdMesesConsumo int		   -- Quantos meses previsto de consumo
 	Declare @nQtdEstoque int			   -- Quantidade de livro no estoque
-	Declare @nQtdMediaConsumida int		-- Quantidade mÈdia consumida de livros
-	Declare @nQtdSolicitada int			-- Quantidade que ser· solicitada para compra
-	Declare @mValorEstimado smallmoney  -- Valor estimado da solicitaÁ„o de compra. 
+	Declare @nQtdMediaConsumida int		-- Quantidade m√©dia consumida de livros
+	Declare @nQtdSolicitada int			-- Quantidade que ser√° solicitada para compra
+	Declare @mValorEstimado smallmoney  -- Valor estimado da solicita√ß√£o de compra. 
    Declare @mPesoEstimado numeric(13,1) -- Peso estimado dos livros.
 
-	Declare @dReferencia datetime  -- Data de ReferÍncia para o consumo. 
+	Declare @dReferencia datetime  -- Data de Refer√™ncia para o consumo. 
 
-	Set @iIDLivro = 8513 -- Identifica o livro que ser· utilizado para o c·lculo 
+	Set @iIDLivro = 8513 -- Identifica o livro que ser√° utilizado para o c√°lculo 
 	Set @dReferencia = '2018-09-15'
 
 	/*
@@ -194,12 +194,12 @@ Begin
 	 Where iIDLivro = @iIDLivro
 
 	if @@ROWCOUNT = 0
-	   raiserror('O ID do livro n„o foi encontrado',10,1)
+	   raiserror('O ID do livro n√£o foi encontrado',10,1)
 	Else Begin 
  
       /*
 	   Calcula o estoque atual do livro
-	   e o valor mÈdio para estimativa da compra. 
+	   e o valor m√©dio para estimativa da compra. 
 	   */
 	   Select @nQtdEstoque =  SUM(nQuantidade),
 		       @mValorEstimado = AVG(mValor) 
@@ -207,8 +207,8 @@ Begin
 	    Where iIDLivro = @iIDLivro
 
 	   /*
-	   Calcula a quantidade mÈdia consumida 
-	   nos ˙ltimos seis meses. 
+	   Calcula a quantidade m√©dia consumida 
+	   nos √∫ltimos seis meses. 
 	   */
 	   Select @nQtdMediaConsumida = AVG(nQuantidade)
 	     From tMOVPedido as Pedido 
@@ -226,7 +226,7 @@ Begin
       -- Calcula o peso estimado
       set @mPesoEstimado = @nQtdSolicitada * @nPeso
 
-	   -- Inclui a solicitaÁ„o de compras.
+	   -- Inclui a solicita√ß√£o de compras.
           
       set @iidSolicitacao = next value for seqiIDSolicitacao
 
@@ -241,7 +241,7 @@ Begin
 End 
 
 /*
-Fim do c·lculo de Consumo MÈdio 
+Fim do c√°lculo de Consumo M√©dio 
 */
 
 select * from tMOVSolicitacaoCompra
