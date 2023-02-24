@@ -1,8 +1,8 @@
 /*
-Você utiliza a instrução EXECUTE para:
+VocÃª utiliza a instruÃ§Ã£o EXECUTE para:
 
 Stored Procedure
-Instrução Dinâmica 
+InstruÃ§Ã£o DinÃ¢mica 
 
 */
 
@@ -16,8 +16,8 @@ Execute stp_UltimoPedido
 
 
 /*
-Observação!! Pelo Management Studio, voce pode executar as procedures
-sem a instrução EXECUTE 
+ObservaÃ§Ã£o!! Pelo Management Studio, voce pode executar as procedures
+sem a instruÃ§Ã£o EXECUTE 
 */
 
 
@@ -31,14 +31,14 @@ go
 stp_UltimoPedido
 go
 
--- Boa Prática!! Utilize o EXECUTE sempre para 
+-- Boa PrÃ¡tica!! Utilize o EXECUTE sempre para 
 -- executar Stored Procedure 
 
 
 
 
 
--- Instruções Dinâmica 
+-- InstruÃ§Ãµes DinÃ¢mica 
 
 
 Declare @cTabela char(20) = 'tCADCliente'
