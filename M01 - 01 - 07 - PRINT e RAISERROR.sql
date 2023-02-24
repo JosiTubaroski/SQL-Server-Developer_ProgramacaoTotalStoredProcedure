@@ -1,7 +1,7 @@
 /*
 
-Como emitir uma mensagem no meio da execuÁ„o de um script para 
-apresentar informaÁıes para quem executou a instruÁıes.
+Como emitir uma mensagem no meio da execu√ß√£o de um script para 
+apresentar informa√ß√µes para quem executou a instru√ß√µes.
 
 Select 
 Print 
@@ -10,8 +10,8 @@ Raiserror()
 Motivos:
 
 - Debugar
-- Gerar um erro ou exceÁ„o
-- Emitir avisos ou informaÁıes
+- Gerar um erro ou exce√ß√£o
+- Emitir avisos ou informa√ß√µes
 
 
 */
@@ -45,14 +45,14 @@ print 'O comando executou '+ cast(@@rowcount as varchar(10))+ ' linhas.'
 Problemas com o print 
 */
 
--- Impress„o com valor null n„o s„o apresentados.
+-- Impress√£o com valor null n√£o s√£o apresentados.
 Print 'Teste de impressao 01'
 
 Print 'Teste de impressao 02 com NULL '  + null
 
 
 -- Print enviado os dados para um buffer. Isso faz com que a mensagem
--- n„o È enviada para o console de execuÁ„o imediatamente. 
+-- n√£o √© enviada para o console de execu√ß√£o imediatamente. 
 
 
 print 'Comando executado'
@@ -61,10 +61,10 @@ go 2
 
 
 /*
-FunÁ„o RAISERROR()
+Fun√ß√£o RAISERROR()
 
-Utilizada para gerar uma exceÁ„o no fluxo de execuÁ„o 
-de um script ou objeto de programaÁ„o. 
+Utilizada para gerar uma exce√ß√£o no fluxo de execu√ß√£o 
+de um script ou objeto de programa√ß√£o. 
 
 No nosso caso, utilizaremos somente para gerar uma mensagem. 
 
@@ -73,8 +73,8 @@ No nosso caso, utilizaremos somente para gerar uma mensagem.
 raiserror('Comando executado com sucesso !!!', 10,1)
 
 /*
-O par‚metro 10 indica para o RAISSERROR() tratar a mensagem como
-uma informaÁ„o .
+O par√¢metro 10 indica para o RAISSERROR() tratar a mensagem como
+uma informa√ß√£o .
 */
 
 /*
@@ -93,9 +93,9 @@ go 2
 
 /*
 
-Boa pr·tica. 
+Boa pr√°tica. 
 Utilize RAISSERROR() WITH NOWAIT 
-para apresentar mensagens de aviso ou uma informaÁ„o direto
-para quem est· executando, sem passar pelo buffer. 
+para apresentar mensagens de aviso ou uma informa√ß√£o direto
+para quem est√° executando, sem passar pelo buffer. 
 
 */
