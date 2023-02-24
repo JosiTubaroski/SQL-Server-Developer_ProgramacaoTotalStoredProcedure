@@ -1,16 +1,16 @@
 /*
 
-BREAK - Interrompe a execução do bloco WHILE, devolve o controle do fluxo
-        para a próximo instrução após o WHILE.
+BREAK - Interrompe a execuÃ§Ã£o do bloco WHILE, devolve o controle do fluxo
+        para a prÃ³ximo instruÃ§Ã£o apÃ³s o WHILE.
 
-CONTINUE - Interrompe a execução do Bloco WHILE e volta o controle para o WHILE, ignorando
-           as instruções abaixo do CONTINUE. 
+CONTINUE - Interrompe a execuÃ§Ã£o do Bloco WHILE e volta o controle para o WHILE, ignorando
+           as instruÃ§Ãµes abaixo do CONTINUE. 
 
 
 
 <Comandos>
 
-WHILE <Condição> BEGIN
+WHILE <CondiÃ§Ã£o> BEGIN
 
    <Comandos>
 
@@ -31,12 +31,12 @@ END
 
 
 /*
-Demonstração 
+DemonstraÃ§Ã£o 
 */
 
 raiserror('Inicio do fluxo' , 10,1)
 
-Declare @iIDLivro int = 0  --- Começa com 0 na variável 
+Declare @iIDLivro int = 0  --- ComeÃ§a com 0 na variÃ¡vel 
 
 While @iIDLivro <= 15 begin  -- Executa o Loop 15 vezes 
 
@@ -46,7 +46,7 @@ While @iIDLivro <= 15 begin  -- Executa o Loop 15 vezes
       Continue                  -- Volta para inicio do While
    
    if @iIDLivro > 10 -- Se contador maior que 10, sai do Loop 
-      break   --- Sair do laço. 
+      break   --- Sair do laÃ§o. 
 
    raiserror('Fluxo normal %d', 10,1,@iidlivro )
 
