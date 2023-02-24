@@ -1,8 +1,8 @@
 /*
-Erros comuns na utilizaÁ„o de vari·vel
+Erros comuns na utiliza√ß√£o de vari√°vel
 
-S„o trÍs dicas para vocÍ n„o errar quando desenvolver
-com vari·veis.
+S√£o tr√™s dicas para voc√™ n√£o errar quando desenvolver
+com vari√°veis.
 
 */
 
@@ -12,8 +12,8 @@ go
 /*
 Dica 1 
 
-Quando o SELECT n„o retorna linhas e n„o h· dados para
-carregar para a vari·vel.
+Quando o SELECT n√£o retorna linhas e n√£o h√° dados para
+carregar para a vari√°vel.
 */
 
 Select * 
@@ -23,7 +23,7 @@ Select *
 
 
 /*
-Quando saldo abaixo de 50, faÁa uma solicitacao de compra 
+Quando saldo abaixo de 50, fa√ßa uma solicitacao de compra 
 */
 
 Declare @nSaldoEstoque int 
@@ -53,7 +53,7 @@ Select @nSaldoEstoque = nQuantidade
  Where iIDEstoque = 26140 
 
 Print @nSaldoEstoque
-Set @nSaldoEstoque = -1 -- Assim que usou a vari·vel, colocar NULL.
+Set @nSaldoEstoque = -1 -- Assim que usou a vari√°vel, colocar NULL.
 
 Select @nSaldoEstoque = nQuantidade 
   From tRelEstoque
@@ -85,7 +85,7 @@ go
 /*
 Dica 2 
 Quando o SELECT retorna mais de uma linha 
-Qual È o estoque do livro 106 ? 
+Qual √© o estoque do livro 106 ? 
 
 */
 
