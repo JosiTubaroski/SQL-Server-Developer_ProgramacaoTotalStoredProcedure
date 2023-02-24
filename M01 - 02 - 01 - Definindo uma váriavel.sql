@@ -1,20 +1,20 @@
 /*
-Vari·vel - Local tempor·rio na memÛria para alocar dados escalar ou tabela
+Vari√°vel - Local tempor√°rio na mem√≥ria para alocar dados escalar ou tabela
 
-- A vari·vel È criada com a instruÁ„o DECLARE 
-- ComeÁa com @.
-- Define o tipo de dado que ser· armazenado.
+- A vari√°vel √© criada com a instru√ß√£o DECLARE 
+- Come√ßa com @.
+- Define o tipo de dado que ser√° armazenado.
 - Opcional, define um valor.
-- Se n„o definir valor, ser· assumido NULL.
-- Ela existir· somente no contexto de execuÁ„o do cÛdigo ou do lote
-- Vari·vel do tipo Table veremos nas prÛximas aulas. 
+- Se n√£o definir valor, ser√° assumido NULL.
+- Ela existir√° somente no contexto de execu√ß√£o do c√≥digo ou do lote
+- Vari√°vel do tipo Table veremos nas pr√≥ximas aulas. 
 
 */
 
--- Define um ˙nica vari·vel  
+-- Define um √∫nica vari√°vel  
 Declare @cNome varchar(200) 
 
--- Define v·rias vari·veis com um DECLARE 
+-- Define v√°rias vari√°veis com um DECLARE 
 Declare @nSaldo int, @nValor Numeric(10)
 
 Declare @nSalario smallmoney ,
@@ -24,7 +24,7 @@ Declare @nSalario smallmoney ,
 Declare @xPedidoExportar xml -- Recebe um estrutura no formato XML
 
 /*
-Definindo vari·vel com valor default 
+Definindo vari√°vel com valor default 
 */
 use eBook
 go
@@ -32,7 +32,7 @@ go
 
 Declare @cNome varchar(200) = 'Jose da Silva' 
 
--- Define v·rias vari·veis com um DECLARE 
+-- Define v√°rias vari√°veis com um DECLARE 
 Declare @nSaldo int = 100 , @nValor Numeric(10) = 1500.00 
 
 Declare @nSalario smallmoney = 7500.00 ,
