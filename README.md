@@ -90,10 +90,6 @@ Entre as extensões, foi implementado comandos de linguagem de programação com
 
 No caso do SQL Server, ele possui o dialeto da linguagem SQL com o nome de de Transact-SQL ou simplesmente T-SQL que segue o padrão ANSI, mas com as exclusividades do banco de dados da Microsoft.
 
-Tenha um ótimo treinamento.
-
-Wolney
-
 O que você aprenderá
 Escolher a melhor forma de usar os comandos de fluxos de dados como IF, WHILE, BEGIN END e TRY CATCH.
 A construir objetos de programação dos mais simples ao mais complexo com Stored Procedures.
